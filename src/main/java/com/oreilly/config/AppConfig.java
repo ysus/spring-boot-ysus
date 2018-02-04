@@ -16,21 +16,21 @@ import java.util.Set;
 //@EnableAspectJAutoProxy
 public class AppConfig {
 	
-	@Autowired
-	private DataSource dataSource;
-	
-	@Resource
-	private Team redSox;
-	
-	@Resource
-	private Team cubs;
-	
-	@Bean
-	public Game game() {
-		BaseballGame baseballGame = new BaseballGame(redSox,cubs);
-		baseballGame.setDataSource(dataSource);
-		return baseballGame;
-	}
+//	@Autowired
+//	private DataSource dataSource;
+//	
+//	@Resource
+//	private Team redSox;
+//	
+//	@Resource
+//	private Team cubs;
+//	
+//	@Bean
+//	public Game game() {
+//		BaseballGame baseballGame = new BaseballGame(redSox,cubs);
+//		baseballGame.setDataSource(dataSource);
+//		return baseballGame;
+//	}
 	
 	
 	

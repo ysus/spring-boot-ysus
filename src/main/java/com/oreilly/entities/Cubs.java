@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 //anot conf
 
-@Component
+//@Component
 public class Cubs implements Team {
 	
     @Override

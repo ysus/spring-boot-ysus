@@ -2,12 +2,12 @@ package com.oreilly.entities;
 
 //import javax.annotation.PostConstruct;
 //import javax.annotation.PreDestroy;
-//import javax.sql.DataSource;
+import javax.sql.DataSource;
 
 public class BaseballGame implements Game {
     private Team homeTeam;
     private Team awayTeam;
-//    private DataSource dataSource;
+    private DataSource dataSource;
 
     public BaseballGame() {}
 
@@ -25,16 +25,21 @@ public class BaseballGame implements Game {
 //    public void endGame() {
 //        System.out.println("Sending highlights to MLB");
 //    }
+    
+   
 
-//    public void setDataSource(DataSource dataSource) {
-//        this.dataSource = dataSource;
-//    }
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+    
+    
 
     public void setHomeTeam(Team homeTeam) {
         this.homeTeam = homeTeam;
     }
 
-    @Override
+
+	@Override
     public Team getHomeTeam() {
         return homeTeam;
     }

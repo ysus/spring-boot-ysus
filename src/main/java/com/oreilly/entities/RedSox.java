@@ -3,7 +3,7 @@ package com.oreilly.entities;
 import org.springframework.stereotype.Component;
 
 // annotation configuration
-//@Component
+@Component
 public class RedSox implements Team {
     @Override
     public String getName() {

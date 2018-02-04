@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.*;
 
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.text.NumberFormat;
 import java.util.List;
@@ -18,15 +19,15 @@ public class AppConfig {
 	@Autowired
 	private DataSource dataSource;
 	
-	@Autowired @Qualifier("redSox")
-	private Team home;
+	@Resource
+	private Team redSox;
 	
-	@Autowired  @Qualifier("cubs")
-	private Team away;
+	@Resource
+	private Team cubs;
 	
 	@Bean
 	public Game game() {
-		BaseballGame baseballGame = new BaseballGame(home,away);
+		BaseballGame baseballGame = new BaseballGame(redSox,cubs);
 		baseballGame.setDataSource(dataSource);
 		return baseballGame;
 	}

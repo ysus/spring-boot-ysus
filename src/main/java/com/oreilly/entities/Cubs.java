@@ -2,8 +2,11 @@ package com.oreilly.entities;
 
 import org.springframework.stereotype.Component;
 
+//anot conf
+
 @Component
 public class Cubs implements Team {
+	
     @Override
     public String getName() {
         return "Chicago Cubs";

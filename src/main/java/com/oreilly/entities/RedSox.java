@@ -2,6 +2,7 @@ package com.oreilly.entities;
 
 import org.springframework.stereotype.Component;
 
+// annotation configuration
 @Component
 public class RedSox implements Team {
     @Override

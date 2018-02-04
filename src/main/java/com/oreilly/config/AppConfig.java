@@ -11,27 +11,26 @@ import java.util.List;
 import java.util.Set;
 
 @Configuration
-@Import(InfrastructureConfig.class)
-//@ComponentScan(basePackages = "com.oreilly")
+@ComponentScan(basePackages = "com.oreilly")
 //@EnableAspectJAutoProxy
 public class AppConfig {
 	
+	@Autowired
+	private DataSource dataSource;
+	
+	@Autowired @Qualifier("redSox")
+	private Team home;
+	
+	@Autowired  @Qualifier("cubs")
+	private Team away;
+	
 	@Bean
-	public Game game(DataSource dataSource) {
-		BaseballGame baseballGame = new BaseballGame(redSox(),cubs());
+	public Game game() {
+		BaseballGame baseballGame = new BaseballGame(home,away);
 		baseballGame.setDataSource(dataSource);
 		return baseballGame;
 	}
 	
-	@Bean
-	public Team redSox() {
-		return new RedSox();
-	}
-	
-	@Bean
-	public Team cubs() {
-		return new RedSox();
-	}
 	
 	
 //    @Autowired

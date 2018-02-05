@@ -40,6 +40,6 @@ public class RunDemo {
         //by default singleton
         System.out.println(game1);
 
-//        context.close();
+        context.close();
     }
 }

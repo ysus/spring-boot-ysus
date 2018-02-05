@@ -17,18 +17,22 @@ public class RunDemo {
 //    	ApplicationContext context =
 //              new ClassPathXmlApplicationContext("applicationContext.xml");
     	
-        Game game = context.getBean("game", Game.class);        
+        Game game1 = context.getBean("game", Game.class); 
+        Game game2 = context.getBean("game", Game.class);  
+        
         Team royals = context.getBean("royals", Team.class);
         Team redSox = context.getBean("redSox", Team.class);
         Team cubs = context.getBean("cubs", Team.class);
 
-        game.setHomeTeam(royals);
-        game.setAwayTeam(cubs);
-        System.out.println(game.playGame());
+        game1.setHomeTeam(royals);
+        game1.setAwayTeam(cubs);
+        System.out.println(game1);
 
-        game.setHomeTeam(cubs);
-        game.setAwayTeam(redSox);
-        System.out.println(game.playGame());
+        game2.setHomeTeam(cubs);
+        game2.setAwayTeam(redSox);
+        System.out.println(game2);
+        //by default singleton
+        System.out.println(game1);
 
         context.close();
     }

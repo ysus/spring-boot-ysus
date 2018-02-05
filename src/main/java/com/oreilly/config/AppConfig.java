@@ -23,19 +23,18 @@ public class AppConfig {
 	private List<Team> teams;
 	
 	
-	  @Bean
-	  @Scope("prototype")
-	  public Game game() {
-	      BaseballGame baseballGame = new BaseballGame(teams.get(0),teams.get(1));
-	      	baseballGame.setDataSource(dataSource);
-	      return baseballGame;
-	  }
-	
-	
-//    @Bean
-//    public NumberFormat nf() {
-//        return NumberFormat.getCurrencyInstance();
-//    }
-//
+	@Bean
+  	@Scope("prototype")
+  	public Game game() {
+      BaseballGame baseballGame = new BaseballGame(teams.get(0),teams.get(1));
+      	baseballGame.setDataSource(dataSource);
+      return baseballGame;
+  	}
+	  
+    @Bean
+    public NumberFormat nf() {
+        return NumberFormat.getCurrencyInstance();
+    }
+
 
 }

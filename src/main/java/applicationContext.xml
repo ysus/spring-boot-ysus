@@ -8,10 +8,13 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
         
+    <bean id="nf" class="java.text.NumberFormat" factory-method="getCurrencyInstance"> </bean>
+        
     <context:component-scan base-package="com.oreilly" />
 
 	<bean id="redSox" class="com.oreilly.entities.RedSox"> </bean>
 	<bean id="cubs" class="com.oreilly.entities.Cubs"> </bean>
+	<bean id="royals" class="com.oreilly.entities.Royals"> </bean>
 	
 	<bean id="game" class="com.oreilly.entities.BaseballGame">
 	<property name="awayTeam" ref="redSox"></property>

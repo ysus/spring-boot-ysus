@@ -13,15 +13,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = AppConfig.class)
 public class BaseballGameTest {
-    @Autowired
     private Game game;
-
-    @Autowired
+    
     private ApplicationContext ctx;
 
+    @Before
+    public void setUp() {
+    	 ctx =  new AnnotationConfigApplicationContext(AppConfig.class);
+    	game = ctx.getBean("game",Game.class);
+    }
     @Test
     public void testPlayGame() throws Exception {
         String home = game.getHomeTeam().getName();
@@ -39,3 +40,31 @@ public class BaseballGameTest {
         assertEquals(royals.getName(), game.getHomeTeam().getName());
     }
 }
+
+//
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration(classes = AppConfig.class)
+//public class BaseballGameTest {
+//    @Autowired
+//    private Game game;
+//
+//    @Autowired
+//    private ApplicationContext ctx;
+//
+//    @Test
+//    public void testPlayGame() throws Exception {
+//        String home = game.getHomeTeam().getName();
+//        String away = game.getAwayTeam().getName();
+//
+//        String result = game.playGame();
+//
+//        assertTrue(result.contains(home) || result.contains(away));
+//    }
+//
+//    @Test
+//    public void testGetAndSetHomeTeam() throws Exception {
+//        Team royals = ctx.getBean("royals", Team.class);
+//        game.setHomeTeam(royals);
+//        assertEquals(royals.getName(), game.getHomeTeam().getName());
+//    }
+//}

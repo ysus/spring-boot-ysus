@@ -17,14 +17,14 @@ public class BaseballGame implements Game {
     }
 
 //    @PostConstruct
-//    public void startGame() {
-//        System.out.println("Playing National Anthem");
-//    }
-//
+    public void startGame() {
+        System.out.println("Playing National Anthem");
+    }
+
 //    @PreDestroy
-//    public void endGame() {
-//        System.out.println("Sending highlights to MLB");
-//    }
+    public void endGame() {
+        System.out.println("Sending highlights to MLB");
+    }
     
    
 

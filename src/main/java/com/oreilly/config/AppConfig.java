@@ -23,7 +23,7 @@ public class AppConfig {
 	private List<Team> teams;
 	
 	
-	@Bean
+	@Bean(initMethod="startGame", destroyMethod="endGame")
   	@Scope("prototype")
   	public Game game() {
       BaseballGame baseballGame = new BaseballGame(teams.get(0),teams.get(1));

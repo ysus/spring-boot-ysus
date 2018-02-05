@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Configuration
 @ComponentScan(basePackages = "com.oreilly")
-//@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy
 public class AppConfig {
 	
 	@Autowired

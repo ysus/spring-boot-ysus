@@ -29,13 +29,11 @@ public class BaseballGame implements Game {
     }
     
    
-
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
     
     
-
     public void setHomeTeam(Team homeTeam) {
         this.homeTeam = homeTeam;
     }
